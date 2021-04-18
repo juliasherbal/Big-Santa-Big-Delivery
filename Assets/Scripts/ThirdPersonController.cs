@@ -11,12 +11,12 @@ public class ThirdPersonController : MonoBehaviour
     CharacterController controller;
     Vector3 input;
     Vector3 moveDirection;
-    Animator anim;
+    //Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
     }
 
@@ -28,11 +28,11 @@ public class ThirdPersonController : MonoBehaviour
         if (moveX != 0 || moveY != 0)
         {
 
-            anim.SetInteger("animState", 1);
+            //anim.SetInteger("animState", 1);
         }
         else if (moveX == 0 && moveY == 0 && controller.isGrounded)
         {
-            anim.SetInteger("animState", 0);
+            //anim.SetInteger("animState", 0);
         }
 
         //input = new Vector3(moveX, 0, moveY);
@@ -54,7 +54,7 @@ public class ThirdPersonController : MonoBehaviour
             if (Input.GetButton("Jump"))
             {
                 Debug.Log("HERE");
-                anim.SetInteger("animState", 2);
+                //anim.SetInteger("animState", 2);
                 moveDirection.y = Mathf.Sqrt(2 * jumpHeight * gravity);
             }
             else
