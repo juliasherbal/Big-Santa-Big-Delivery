@@ -18,6 +18,7 @@ public class ThirdPersonController : MonoBehaviour
     {
         //anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
