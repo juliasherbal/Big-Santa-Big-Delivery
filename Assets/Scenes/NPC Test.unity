@@ -526,6 +526,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Big Santa
       objectReference: {fileID: 0}
+    - target: {fileID: 393069171029290035, guid: 3161fb47376954049b8d6ec60792c042,
+        type: 3}
+      propertyPath: startingPosition
+      value: 
+      objectReference: {fileID: 1979124000}
     - target: {fileID: 395169466781206376, guid: 3161fb47376954049b8d6ec60792c042,
         type: 3}
       propertyPath: m_RootOrder
@@ -971,6 +976,7 @@ MonoBehaviour:
   player: {fileID: 992949783}
   maxFOV: 45
   sightDistance: 10
+  seen: 0
 --- !u!1 &1378265861
 GameObject:
   m_ObjectHideFlags: 0

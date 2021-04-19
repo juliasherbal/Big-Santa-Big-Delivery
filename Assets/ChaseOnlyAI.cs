@@ -14,7 +14,6 @@ public class ChaseOnlyAI : MonoBehaviour
 
     public float chaseSpeed;
 
-    public List<GameObject> checkpoints;
     public GameObject currentGoal;
     public NavMeshAgent agent;
 
@@ -87,7 +86,6 @@ public class ChaseOnlyAI : MonoBehaviour
         if (chaseTime >= maxChaseTime)
         {
             chaseTime = 0;
-            FindNextGoal();
             currentState = FSMStates.Idle;
         }
     }
@@ -98,11 +96,6 @@ public class ChaseOnlyAI : MonoBehaviour
         transform.Rotate(0, 10f, 0);
     }
 
-    void FindNextGoal()
-    {
-        int rand = Random.Range(0, checkpoints.Count);
-        currentGoal = checkpoints[rand];
-    }
 
     bool PlayerInFov()
     {

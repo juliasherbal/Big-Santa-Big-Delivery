@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\ChaseOnlyAI.cs" />
      <Compile Include="Assets\EnemyAI.cs" />
+     <Compile Include="Assets\LevelManager.cs" />
      <Compile Include="Assets\NPCSpawner.cs" />
      <Compile Include="Assets\NPCVision.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.6.4\Cinemachine Example Scenes\Scenes\3rdPersonWithAimMode\ActivateOnKeypress.cs" />
@@ -86,6 +87,7 @@
      <Compile Include="Assets\Scripts\RunSantaOver.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonController.cs" />
      <Compile Include="Assets\SimpleEnemyAI.cs" />
+     <Compile Include="Assets\WinSleigh.cs" />
      <None Include="Assets\Meshtint Free Santa Claus\Read me.txt" />
      <None Include="Assets\Meshtint Free Santa Claus\www.meshtint.com.txt" />
      <None Include="Assets\BrokenVector\LowPolyWinterPack\README.txt" />

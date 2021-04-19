@@ -28,6 +28,7 @@ public class NPCVision : MonoBehaviour
                 {
                     obj.GetComponent<NPCSpawner>().Spawn();
                 }
+                seen = true;
             }
         }
         OnDrawGizmos();
