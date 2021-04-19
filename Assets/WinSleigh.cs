@@ -11,8 +11,7 @@ public class WinSleigh : MonoBehaviour
     }
 
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         lm.LevelBeat();
     }

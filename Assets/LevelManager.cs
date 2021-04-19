@@ -70,9 +70,15 @@ public class LevelManager : MonoBehaviour
 
     }
 
+    public void ReduceTimer()
+    {
+        countDown -= 15f;   
+    }
+
     void LoadCurrentLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 
 }
