@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour
+public class SimpleEnemyAI : MonoBehaviour
 {
     public enum FSMStates
     {
@@ -20,7 +20,6 @@ public class EnemyAI : MonoBehaviour
     public NavMeshAgent agent;
 
     public GameObject player;
-    public int maxFOV;
     public int sightDistance;
     public float captureDistance;
 
@@ -67,7 +66,7 @@ public class EnemyAI : MonoBehaviour
         {
             FindNextGoal();
         }
-        if (distanceFromPlayer <= sightDistance && PlayerInFov())
+        if (distanceFromPlayer <= sightDistance)
         {
             Debug.Log("Spotted OMG!");
             currentState = FSMStates.Chase;
@@ -113,34 +112,6 @@ public class EnemyAI : MonoBehaviour
     {
         int rand = Random.Range(0, checkpoints.Count);
         currentGoal = checkpoints[rand];
-    }
-
-    bool PlayerInFov()
-    {
-        Vector3 directionToPlayer = player.transform.position - transform.position;
-        if (Vector3.Angle(directionToPlayer, transform.forward) <= maxFOV)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, directionToPlayer, out hit, sightDistance))
-            {
-                if (hit.collider.CompareTag("Player"))
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Vector3 frontView = (transform.forward * sightDistance);
-        Vector3 left = Quaternion.Euler(0, maxFOV * 0.5f, 0) * frontView;
-        Vector3 right = Quaternion.Euler(0, -maxFOV * 0.5f, 0) * frontView;
-
-        Debug.DrawLine(transform.position, transform.position + frontView, Color.cyan);
-        Debug.DrawLine(transform.position, transform.position + left, Color.yellow);
-        Debug.DrawLine(transform.position, transform.position + right, Color.yellow);
     }
 
     void FaceTarget(Vector3 destination)
