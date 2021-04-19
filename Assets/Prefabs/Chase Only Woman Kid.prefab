@@ -2224,6 +2224,7 @@ GameObject:
   - component: {fileID: 1321442309986359758}
   - component: {fileID: 1321442309979471400}
   - component: {fileID: 1054133151010559905}
+  - component: {fileID: 8988230637036570541}
   m_Layer: 0
   m_Name: Chase Only Woman Kid
   m_TagString: Enemy
@@ -2286,17 +2287,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d29dca5c62340248aa3e1789bec3c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 0
-  checkpoints: []
+  chaseSpeed: 55
   currentGoal: {fileID: 0}
-  agent: {fileID: 0}
+  agent: {fileID: 8988230637036570541}
   player: {fileID: 0}
-  maxFOV: 0
-  sightDistance: 0
-  captureDistance: 0
+  maxFOV: 55
+  sightDistance: 50
+  captureDistance: 1.5
   currentState: 0
   chaseTime: 0
-  maxChaseTime: 0
+  maxChaseTime: 60
+--- !u!195 &8988230637036570541
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321442309986838234}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1321442309986838338
 GameObject:
   m_ObjectHideFlags: 0

@@ -107,6 +107,9 @@ public class EnemyAI : MonoBehaviour
     {
         agent.SetDestination(transform.position);
         transform.Rotate(0, 10f, 0);
+        player.transform.position = GameObject.FindGameObjectWithTag("startingPos").transform.position;
+        GameObject.Find("LevelManager").GetComponent<LevelManager>().countDown -= 30;
+        currentState = FSMStates.Patrol;
     }
 
     void FindNextGoal()
@@ -134,13 +137,13 @@ public class EnemyAI : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Vector3 frontView = (transform.forward * sightDistance);
+        /*Vector3 frontView = (transform.forward * sightDistance);
         Vector3 left = Quaternion.Euler(0, maxFOV * 0.5f, 0) * frontView;
         Vector3 right = Quaternion.Euler(0, -maxFOV * 0.5f, 0) * frontView;
 
         Debug.DrawLine(transform.position, transform.position + frontView, Color.cyan);
         Debug.DrawLine(transform.position, transform.position + left, Color.yellow);
-        Debug.DrawLine(transform.position, transform.position + right, Color.yellow);
+        Debug.DrawLine(transform.position, transform.position + right, Color.yellow);*/
     }
 
     void FaceTarget(Vector3 destination)

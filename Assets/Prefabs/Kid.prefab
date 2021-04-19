@@ -294,8 +294,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a84df9e19f70240bac7193d09756af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolSpeed: 6
-  chaseSpeed: 25
+  patrolSpeed: 13.5
+  chaseSpeed: 40
   checkpoints: []
   currentGoal: {fileID: 0}
   agent: {fileID: 4368526278040114982}

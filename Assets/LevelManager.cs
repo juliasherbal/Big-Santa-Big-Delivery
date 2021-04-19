@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
 
     public static bool isGameOver = false;
 
-    float countDown;
+    public float countDown;
 
 
     void Start()

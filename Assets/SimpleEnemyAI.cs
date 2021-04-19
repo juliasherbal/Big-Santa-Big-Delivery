@@ -106,6 +106,9 @@ public class SimpleEnemyAI : MonoBehaviour
     {
         agent.SetDestination(transform.position);
         transform.Rotate(0, 10f, 0);
+        player.transform.position = GameObject.FindGameObjectWithTag("startingPos").transform.position;
+        GameObject.Find("LevelManager").GetComponent<LevelManager>().countDown -= 60;
+        currentState = FSMStates.Patrol;
     }
 
     void FindNextGoal()
