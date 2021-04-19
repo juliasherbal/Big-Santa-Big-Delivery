@@ -11,6 +11,8 @@ public class ThirdPersonController : MonoBehaviour
     CharacterController controller;
     Vector3 input;
     Vector3 moveDirection;
+
+    public GameObject startingPosition;
     //Animator anim;
 
     // Start is called before the first frame update
@@ -19,6 +21,7 @@ public class ThirdPersonController : MonoBehaviour
         //anim = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
+        startingPosition = GameObject.FindGameObjectWithTag("startingPos");
     }
 
     // Update is called once per frame
@@ -72,5 +75,10 @@ public class ThirdPersonController : MonoBehaviour
 
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = startingPosition.transform.position;
     }
 }
