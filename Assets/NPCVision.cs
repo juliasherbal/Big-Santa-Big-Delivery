@@ -8,6 +8,8 @@ public class NPCVision : MonoBehaviour
     public int maxFOV;
     public int sightDistance;
 
+    public bool seen = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,14 @@ public class NPCVision : MonoBehaviour
     {
         if (PlayerInFov())
         {
-            Debug.Log("Fart!");
+            if (!seen)
+            {
+                Debug.Log("Fart!");
+                foreach (GameObject obj in GameObject.FindGameObjectsWithTag("NPC Spawner"))
+                {
+                    obj.GetComponent<NPCSpawner>().Spawn();
+                }
+            }
         }
         OnDrawGizmos();
     }

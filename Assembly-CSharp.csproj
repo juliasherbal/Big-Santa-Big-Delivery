@@ -55,7 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ChaseOnlyAI.cs" />
      <Compile Include="Assets\EnemyAI.cs" />
+     <Compile Include="Assets\NPCSpawner.cs" />
      <Compile Include="Assets\NPCVision.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.6.4\Cinemachine Example Scenes\Scenes\3rdPersonWithAimMode\ActivateOnKeypress.cs" />
      <Compile Include="Assets\Samples\Cinemachine\2.6.4\Cinemachine Example Scenes\Scenes\Anywhere Door\PlayerLookAt.cs" />
